@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative "lib/austin_trails/version"
 
 Gem::Specification.new do |spec|
@@ -8,17 +6,17 @@ Gem::Specification.new do |spec|
   spec.authors       = ["vincent"]
   spec.email         = ["vincentuong@yahoo.com"]
 
-  spec.summary       = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description   = "TODO: Write a longer description or delete this line."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "This app will find a trail in Austin for hikers to explore."
+  spec.description   = "The user will be able to obtain the address and key info for each trail in Austin."
+  spec.homepage      = "https://www.timeout.com/austin/things-to-do/best-hikes-in-austin"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.4.0"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'https://mygemserver.com'"
+  spec.metadata["allowed_push_host"] = "https://www.timeout.com/austin/things-to-do/best-hikes-in-austin"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://www.timeout.com/austin/things-to-do/best-hikes-in-austin"
+  spec.metadata["changelog_uri"] = "https://www.timeout.com/austin/things-to-do/best-hikes-in-austin"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -34,4 +32,8 @@ Gem::Specification.new do |spec|
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
+
+  spec.add_development_dependency "pry"
+  
+  spec.add_dependency "nokogiri"
 end
