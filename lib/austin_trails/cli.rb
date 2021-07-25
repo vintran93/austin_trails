@@ -13,7 +13,7 @@ class AustinTrails::CLI
     def list_trails
         puts "Here are the top 10 hiking trails.".colorize(:green) 
 
-        @details = AustinTrails::Hike.trail #class method called name that returns all details for the names
+        @details = AustinTrails::Hike.trail #class method called trail that returns all details for the names
         @details.each.with_index(1) do |hike, i|
             puts "#{i}. #{hike.name}"
         end
@@ -26,7 +26,7 @@ class AustinTrails::CLI
     def menu
         input = nil
         until input == "exit"
-            puts "Enter the number of the hike for more info or type list to see the options again or done:".colorize(:green)
+            puts "Enter the number of the hike for more info or type list to see the options again or exit:".colorize(:green)
             input = gets.strip
             selected_hike = input.to_i
         
