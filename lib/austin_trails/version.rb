@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 module AustinTrails
   VERSION = "0.1.0"

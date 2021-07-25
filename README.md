@@ -1,6 +1,6 @@
 # AustinTrails
 
-Checkout the top hiking trails in Austin, Texas!
+Check out the top hiking trails in Austin, Texas!
 
 TODO: Delete this and the text above, and describe your gem
 
