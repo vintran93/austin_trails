@@ -7,20 +7,34 @@ class AustinTrails::CLI
     end
 
     def welcome_user
-        puts "Welcome to Austin! This city is known for having many beautiful hiking trails.".colorize(:green)
-    end
+        puts    "________________________________________________________________________________________".colorize(:green).strip
+        puts    "|                                                                                       |".colorize(:green)
+        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green)
+        puts    "|     Welcome to Austin! This city is known for having many beautiful hiking trails.    |".colorize(:green).strip                      
+        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green).strip
+        puts    "|                                                                                       |".colorize(:green).strip
+        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green).strip
+        puts    "|            Looking for a new adventure in the countryside of Texas?                   |".colorize(:green).strip
+        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green).strip
+        puts    "|                                                                                       |".colorize(:green).strip
+        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green).strip
+        puts    "|                  Please make a selection below for more info.                         |".colorize(:green).strip
+        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green).strip
+        puts    "|_______________________________________________________________________________________|".colorize(:green).strip
+    end 
 
     def list_trails
         puts "Here are the top 10 hiking trails.".colorize(:green) 
 
         @details = AustinTrails::Hike.trail #class method called trail that returns all details for the names
-        @details.each.with_index(1) do |hike, i|
-            puts "#{i}. #{hike.name}"
+        @details.each.with_index(1) do |hike, index|
+            puts "#{index}. #{hike.name}"
         end
     end
 
     def valid_input?(input, data)
-        input.to_i <= data.length && input.to_i > 0
+        input <= data.length && input > 0
+        #binding.pry
     end
 
     def menu
