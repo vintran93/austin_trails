@@ -3,7 +3,6 @@ class AustinTrails::CLI
     def start
         welcome_user
         type_enter
-        introduction
     end
 
     def welcome_user
