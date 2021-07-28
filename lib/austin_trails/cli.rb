@@ -71,7 +71,7 @@ class AustinTrails::CLI
             elsif input == "exit"
                 see_you_later
             else
-                puts "That was an invalid answer, please type list or exit"
+                puts "That was an invalid answer, please type list or exit".colorize(:yellow)
             end
         end
         exit
