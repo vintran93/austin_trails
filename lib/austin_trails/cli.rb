@@ -35,8 +35,8 @@ class AustinTrails::CLI
     end  
 
     def introduction
-        beginning = AustinTrails::Hike.trail[0]
-        puts "#{beginning.heading}".strip.colorize(:green) + "\n" + "\n" + "#{beginning.intro}".strip.colorize(:green)
+            intro = AustinTrails::Hike.trail[0]
+        puts "#{intro.heading}".strip.colorize(:green) + "\n" + "\n" + "#{intro.intro}".strip.colorize(:green)
         list_trails
     end
 
@@ -77,6 +77,6 @@ class AustinTrails::CLI
     end
 
     def see_you_later
-        puts "Thanks for stopping by. See you next time!".colorize(:yellow)
+        puts "Thank you for stopping by. See you next time!".colorize(:yellow)
     end
 end
