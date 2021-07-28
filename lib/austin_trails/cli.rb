@@ -2,34 +2,59 @@ class AustinTrails::CLI
     
     def start
         welcome_user
-        list_trails
-        menu
+        type_enter
+        introduction
+        #list_trails
+        #menu
+        #see_you_later
     end
 
     def welcome_user
-        puts    "________________________________________________________________________________________".colorize(:green).strip
+        puts    "________________________________________________________________________________________".colorize(:green)
         puts    "|                                                                                       |".colorize(:green)
         puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green)
-        puts    "|     Welcome to Austin! This city is known for having many beautiful hiking trails.    |".colorize(:green).strip                      
-        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green).strip
-        puts    "|                                                                                       |".colorize(:green).strip
-        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green).strip
-        puts    "|            Looking for a new adventure in the countryside of Texas?                   |".colorize(:green).strip
-        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green).strip
-        puts    "|                                                                                       |".colorize(:green).strip
-        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green).strip
-        puts    "|                  Please make a selection below for more info.                         |".colorize(:green).strip
-        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green).strip
-        puts    "|_______________________________________________________________________________________|".colorize(:green).strip
-    end 
+        puts    "|     Welcome to Austin! This city is known for having many beautiful hiking trails.    |".colorize(:green)                      
+        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green)
+        puts    "|                                                                                       |".colorize(:green)
+        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green)
+        puts    "|            Looking for a new adventure in the hill country of Texas?                   |".colorize(:green)
+        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green)
+        puts    "|                                                                                       |".colorize(:green)                               
+        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green)
+        puts    "|                               Type enter to continue                                 |".colorize(:green)
+        puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green)
+        puts    "|_______________________________________________________________________________________|".colorize(:green)
+    end
+
+    def type_enter
+        input = gets.strip
+        if input == "enter"
+            introduction 
+        elsif input == "exit"
+            see_you_later
+        else 
+            puts "That is an invalid answer, please type enter or exit"
+            type_enter
+        end
+    end  
+
+    def introduction
+        beginning = AustinTrails::Hike.trail[0]
+        puts "#{beginning.heading}".strip.colorize(:green) + "\n" + "\n" + "#{beginning.intro}".strip.colorize(:green)
+        #input = gets.strip
+        #when input == "enter"
+        list_trails
+    end
 
     def list_trails
-        puts "Here are the top 10 hiking trails.".colorize(:green) 
+        puts "Here are the top 10 hiking trails in Austin, Texas.".colorize(:green)
 
-        @details = AustinTrails::Hike.trail #class method called trail that returns all details for the names
+        @details = AustinTrails::Hike.trail[1..10] #class method called trail that returns all details for the names
         @details.each.with_index(1) do |hike, index|
             puts "#{index}. #{hike.name}"
-        end
+        end 
+        puts "Enter the number of the hike for more info or type list to see the options again or exit:".colorize(:green)
+        menu
     end
 
     def valid_input?(input, data)
@@ -40,7 +65,6 @@ class AustinTrails::CLI
     def menu
         input = nil
         until input == "exit"
-            puts "Enter the number of the hike for more info or type list to see the options again or exit:".colorize(:green)
             input = gets.strip
             selected_hike = input.to_i
         
@@ -55,6 +79,7 @@ class AustinTrails::CLI
                 puts "That was an invalid answer, please type list or exit"
             end
         end
+        exit
     end
 
     def see_you_later
