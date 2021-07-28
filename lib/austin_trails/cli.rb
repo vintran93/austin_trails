@@ -73,7 +73,6 @@ class AustinTrails::CLI
                 puts "That was an invalid answer, please type list or exit".colorize(:yellow)
             end
         end
-        exit
     end
 
     def see_you_later
