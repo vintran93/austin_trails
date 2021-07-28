@@ -29,7 +29,7 @@ class AustinTrails::CLI
         elsif input == "exit"
             see_you_later
         else 
-            puts "That is an invalid answer, please type enter or exit"
+            puts "That is an invalid answer, please type enter or exit".colorize(:yellow)
             type_enter
         end
     end  
@@ -78,6 +78,6 @@ class AustinTrails::CLI
     end
 
     def see_you_later
-        puts "Thanks for stopping by. See you next time!"
+        puts "Thanks for stopping by. See you next time!".colorize(:yellow)
     end
 end
