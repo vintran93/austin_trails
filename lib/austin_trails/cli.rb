@@ -37,7 +37,6 @@ class AustinTrails::CLI
     def introduction
         beginning = AustinTrails::Hike.trail[0]
         puts "#{beginning.heading}".strip.colorize(:green) + "\n" + "\n" + "#{beginning.intro}".strip.colorize(:green)
-
         list_trails
     end
 
