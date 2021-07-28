@@ -4,9 +4,6 @@ class AustinTrails::CLI
         welcome_user
         type_enter
         introduction
-        #list_trails
-        #menu
-        #see_you_later
     end
 
     def welcome_user
@@ -17,11 +14,11 @@ class AustinTrails::CLI
         puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green)
         puts    "|                                                                                       |".colorize(:green)
         puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green)
-        puts    "|            Looking for a new adventure in the hill country of Texas?                   |".colorize(:green)
+        puts    "|            Looking for a new adventure in the hill country of Texas?                  |".colorize(:green)
         puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green)
         puts    "|                                                                                       |".colorize(:green)                               
         puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green)
-        puts    "|                               Type enter to continue                                 |".colorize(:green)
+        puts    "|                               Type enter to continue                                  |".colorize(:green)
         puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green)
         puts    "|_______________________________________________________________________________________|".colorize(:green)
     end
@@ -41,8 +38,7 @@ class AustinTrails::CLI
     def introduction
         beginning = AustinTrails::Hike.trail[0]
         puts "#{beginning.heading}".strip.colorize(:green) + "\n" + "\n" + "#{beginning.intro}".strip.colorize(:green)
-        #input = gets.strip
-        #when input == "enter"
+
         list_trails
     end
 

@@ -1,6 +1,6 @@
 class AustinTrails::Hike
 
-    attr_accessor :name, :description, :intro, :heading #:heading, :intro # Set the attributes for the Hike class
+    attr_accessor :name, :description, :intro, :heading # Set the attributes for the Hike class
 
     def self.trail
         self.scrape_details
@@ -8,7 +8,7 @@ class AustinTrails::Hike
 
     def self.scrape_details
         details = []
-        #intro << self.scrape_intro
+        
         details << self.scrape_intro
         details << self.scrape_mayfield
         details << self.scrape_river_place
