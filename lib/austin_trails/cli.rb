@@ -46,7 +46,7 @@ class AustinTrails::CLI
 
         @details = AustinTrails::Hike.trail[1..10] #class method called trail that returns all details for the names
         @details.each.with_index(1) do |hike, index|
-            puts "#{index}. #{hike.name}"
+            puts "#{index}. #{hike.name}".colorize(:yellow)
         end 
         puts "Enter the number of the hike for more info or type list to see the options again or exit:".colorize(:green)
         menu
