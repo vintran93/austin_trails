@@ -33,7 +33,7 @@ class AustinTrails::Hike
     def self.scrape_mayfield
         doc = Nokogiri::HTML(open("https://www.timeout.com/austin/things-to-do/mayfield-nature-preserve"))
         hike = self.new # create a new instance of hike 
-        hike.name = doc.search("div h1").text
+        hike.name = doc.search("div h1").text.strip
         hike.description = doc.search("//div[@itemprop = 'reviewBody']").children.text.strip
         hike # return the instance name and description and store it into the array
     end
