@@ -6,7 +6,7 @@ class AustinTrails::CLI
     end
 
     def welcome_user
-        puts    "________________________________________________________________________________________".colorize(:green)
+        puts    " _______________________________________________________________________________________".colorize(:green)
         puts    "|                                                                                       |".colorize(:green)
         puts    "|///////////////////////////////////////////////////////////////////////////////////////|".colorize(:green)
         puts    "|     Welcome to Austin! This city is known for having many beautiful hiking trails.    |".colorize(:green)                      

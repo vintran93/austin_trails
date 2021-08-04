@@ -25,7 +25,7 @@ class AustinTrails::Hike
     def self.scrape_intro
         doc = Nokogiri::HTML(open("https://www.timeout.com/austin/things-to-do/best-hikes-in-austin"))
         hike = self.new # create a new instance of hike 
-        hike.heading = doc.search("header p").text 
+        hike.heading = doc.search("div#content p").text 
         hike.intro = doc.search("div.xs-mx3.md-mx0.xs-my5.xs-line-height-6.feature-intro p").text.strip
         hike # return the instance intro and heading and store it into the array
     end
