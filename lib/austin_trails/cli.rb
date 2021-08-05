@@ -61,7 +61,8 @@ class AustinTrails::CLI
             selected_hike = input.to_i
             if valid_input?(selected_hike, @details)
                 selected_hike = @details[input.to_i-1] # we want the array index of the details
-                puts "Here are the details for - #{selected_hike.name}".colorize(:yellow) + "\n" + "\n" + "#{selected_hike.description}".colorize(:green)
+                puts "Here are the details for - #{selected_hike.name}".colorize(:yellow) + "\n" + "\n" + 
+                "#{selected_hike.description}".colorize(:green)
                 puts "Enter another hike number for more info or type list or exit.".colorize(:yellow)
             elsif input == "list"
                 list_trails
